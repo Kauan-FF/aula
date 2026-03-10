@@ -5,7 +5,7 @@ comando_email = "git config user.email \" 20241pvai0030017@estudantes.ifpr.edu.b
 os.system(comando_email)
 comando1 = "git add *"
 os.system(comando1)
-mensagem = input("Mensagem do commit")
+mensagem = input("Mensagem do commit ")
 while len(mensagem) < 5:
     print("⚠️ Mensagem muito pequena, detalhe mais...")
     mensagem = input("🔤 Mensagem do commit")
