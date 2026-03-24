@@ -27,4 +27,5 @@ kauan= Estudantes()
 kauan.nome = "Kauan Campois"
 kauan.cpf = "898.789.654-09"
 kauan.data_nasc = "06/04/2009"
-   
+
+print("oi")
