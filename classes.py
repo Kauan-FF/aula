@@ -1,4 +1,4 @@
-class Estudante:
+class Jogador:
     def __init__ (self,nome_jg, nick,ape):
         self.nome_jogador = nome_jg
         self.nick = nick
@@ -12,6 +12,8 @@ class Estudante:
         for estudante in lista:
             print(f"Jogador: {estudante.nome_jogador}/ nickname: {estudante.nick}/ Apelido {estudante.apelido}")
 
+    def procurar_nick (self):
+        print(f"Nick: {self.nome_jogador} / {self.nick} / {self.apelido}")
 
 class Equipe:
     def __init__ (self,nome_eq,jg):
@@ -24,7 +26,7 @@ class Equipe:
         print(f"Equipe: {self.nome_equipe}: adicionado")
 
 
-    def adicionar_jogadores(self):
+    def adicionar_jogador(self):
         print(f"Jogador: {self.jogador} adicionado")
 
 
@@ -36,14 +38,9 @@ class Equipe:
         else:
             print("Nenhuma equipe cadastrada")
 
-    def consultar_equipes(self,equipes):
-        if (len(equipes) == 0):
-            print("Nenhuma equipe cadastrada")
-        else:
-            print("Equipes cadastradas")
-            for y in self.nome_equipe:
-                print(f"Nome: {self.nome_Equipe} ")
-
+    def consultar_equipes(self):
+                print(f"Nome: {self.nome_equipe} ")
+        
 
     
     

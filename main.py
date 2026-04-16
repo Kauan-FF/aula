@@ -1,4 +1,4 @@
-from classes import Estudante
+from classes import Jogador
 from classes import Equipe
 
 equipes = []
@@ -21,7 +21,7 @@ while True:
         nick = input("Digite o nick do jogador: ")
         ape = input("Digite o apelido do jogador: ")
 
-        jogador = Estudante(nome_jg, nick, ape)
+        jogador = Jogador(nome_jg, nick, ape)
         jogadores.append(jogador)
         jogador.cadastro_jogadores()
     
@@ -40,15 +40,34 @@ while True:
                 for j in jogadores:
                     if(nome == j.nome_jogador):
                         eq.jogadores.append(j)
-                        equipe.cadastro_equipe()
+                        equipe.adicionar_jogador()
 
     elif opcao == 4:
-        if len(equipes) > 0:
-            equipes[0].consultar_equipes(equipes)
-            
+        if(len(equipes) >= 1):
+            for equipe in equipes:
+                equipe.consultar_equipes()
+        else:
+            print("Nenhuma equipe cadastrada")
 
     elif opcao == 5:
         nome = input("Digite o nome da equipe")
         for x in equipes:
             if( nome == x.nome_equipe): 
                 x.consultar_membros()
+
+
+    elif opcao == 6:
+        busca = input("Digite o nick do jogador")
+        if(len(jogadores) == 0):
+            print("Nenhum jogador cadastrado")
+            for k in jogadores:
+                if(busca == k.nick ):
+                    k.procurar_nick()
+
+                else:
+                    print("Jogador não encontrado")
+    elif opcao == 0:
+        print("Saindo....")
+
+    else:
+        print("Digite um numero de 1 a 6")
