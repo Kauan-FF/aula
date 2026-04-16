@@ -43,7 +43,9 @@ while True:
                         equipe.cadastro_equipe()
 
     elif opcao == 4:
-        equipes.consultar_equipes(equipes)
+        if len(equipes) > 0:
+            equipes[0].consultar_equipes(equipes)
+            
 
     elif opcao == 5:
         nome = input("Digite o nome da equipe")
