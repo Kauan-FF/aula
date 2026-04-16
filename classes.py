@@ -32,17 +32,17 @@ class Equipe:
         if(len(self.jogadores) >= 1):
             print(f"Nome da equipe: {self.nome_equipe}")
             for i in self.jogadores:
-                print(f"Jogador (i + 1): {i.jogadores}")
+                print(f"Jogador: {i.jogadores}")
         else:
             print("Nenhuma equipe cadastrada")
 
-    def consultar_equipes(self):
-        if(len(equipes) == 0):
+    def consultar_equipes(self,equipes):
+        if (len(equipes) == 0):
             print("Nenhuma equipe cadastrada")
         else:
             print("Equipes cadastradas")
-            for y in equipes:
-                print(f"Nome (i + 1): {self.nome_Equipe} ")
+            for y in self.nome_equipe:
+                print(f"Nome: {self.nome_Equipe} ")
 
 
     
