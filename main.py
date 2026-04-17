@@ -1,9 +1,7 @@
 from classes import Jogador
 from classes import Equipe
-
-equipes = []
-jogadores = []
-
+lista_j = []
+lista_e = []
 while True:
     print("\n=== MENU ===")
     print("1 - Cadastrar Jogadores")
@@ -12,49 +10,52 @@ while True:
     print("4 - Consultar nomes das equipe")
     print("5 - Consultar jogadores da equipe")
     print("6 - Buscar jogador por nickname")
-    print("7 - Sair")
+    print("0 - Sair")
 
     opcao = int(input("Escolha uma opção: "))
 
     if opcao == 1:
-        nome_jg = input("Digite o nome do jogador: ")
-        nick = input("Digite o nick do jogador: ")
-        ape = input("Digite o apelido do jogador: ")
-
-        jogador = Jogador(nome_jg, nick, ape)
-        jogadores.append(jogador)
-        jogador.cadastro_jogadores()
+        jg = Jogador()
+        jg.nome_jogador = input("Digite o nome do jogador: ")
+        jg.nick = input("Digite o nick do jogador: ")
+        jg.apelido = input("Digite o apelido do jogador: ")
+        jg.cadastro_jogadores()
+        lista_j.append(jg)
     
     elif opcao == 2:
-        nome_eq = input("Digite o nome da equipe: ")
-        jg = input("Digite o nome do jogo da equipe: ")
-        equipe= Equipe(nome_eq,jg)
-        equipes.append(equipe)
-        equipe.cadastro_equipe()
+        eq = Equipe()
+        eq.nome_equipe = input("Digite o nome da equipe: ")
+        eq.jogo = input("Digite o nome do jogo da equipe: ")
+        eq.cadastro_equipe()
+        lista_e.append(eq)
 
     elif opcao == 3:
-        equi = input("Digite o nome da equipe")
-        for eq in equipes:
-            if(equi == eq.nome_equipe):
-                nome = input("Digite o nome do jogador")
-                for j in jogadores:
-                    if(nome == j.nome_jogador):
-                        eq.jogadores.append(j)
-                        equipe.adicionar_jogador()
+        print("Lista de Jogadores Disponiveis")
+        for a in lista_j:
+            print(f"Jogadores: {a.nome_jogador} disponiveis ")
+        print("Lista de Equipes Disponiveis")
+        for b in lista_e:
+            print(f"Equipes: {b.nome_equipe} disponiveis ")
+        
+        jogadores = input("Digite o nome do Jogador")
+        for c in lista_j:
+                if(jogadores == c.nome_jogador):
+                    nome_equipe = input("Digite o nome da equipe")
+                    for d in lista_e:
+                        if(nome_equipe == d.nome_equipe):
+                            d.adicionar_jogador(c)
 
     elif opcao == 4:
-        if(len(equipes) >= 1):
-            for equipe in equipes:
-                equipe.consultar_equipes()
-        else:
-            print("Nenhuma equipe cadastrada")
+        for e in lista_e:
+            e.listar_equipes()
+
 
     elif opcao == 5:
-        nome = input("Digite o nome da equipe")
-        for x in equipes:
-            if( nome == x.nome_equipe): 
-                x.consultar_membros()
-
+       nome = input("Digite o nome da equipe")
+       for v in lista_e:
+           if(nome == v.nome_equipe):
+               v.consultar_equipes()
+        
 
     elif opcao == 6:
         busca = input("Digite o nick do jogador")
@@ -64,10 +65,10 @@ while True:
                 if(busca == k.nick ):
                     k.procurar_nick()
 
-                else:
-                    print("Jogador não encontrado")
-    elif opcao == 0:
-        print("Saindo....")
+    #             else:
+    #                 print("Jogador não encontrado")
+    # elif opcao == 0:
+    #     print("Saindo....")
 
     else:
         print("Digite um numero de 1 a 6")

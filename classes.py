@@ -1,47 +1,42 @@
 class Jogador:
-    def __init__ (self,nome_jg, nick,ape):
-        self.nome_jogador = nome_jg
-        self.nick = nick
-        self.apelido = ape
+    def __init__ (self):
+        self.nome_jogador = ""
+        self.nick = ""
+        self.apelido = ""
 
+    def cadastro_jogadores (jg):
+        print(f"Jogador {jg.nome_jogador}: adicionado")
 
-    def cadastro_jogadores (self):
-        print(f"Jogador {self.nome_jogador}: adicionado")
-
-    def consultar_jogadores (self,lista):
-        for estudante in lista:
-            print(f"Jogador: {estudante.nome_jogador}/ nickname: {estudante.nick}/ Apelido {estudante.apelido}")
 
     def procurar_nick (self):
         print(f"Nick: {self.nome_jogador} / {self.nick} / {self.apelido}")
 
 class Equipe:
-    def __init__ (self,nome_eq,jg):
-        self.nome_equipe = nome_eq
-        self.jogo = jg 
-        self.jogadores = []
+    def __init__ (self):
+        self.nome_equipe = ""
+        self.jogo = ""
+        self.jogadores = [] 
 
 
-    def cadastro_equipe (self):
-        print(f"Equipe: {self.nome_equipe}: adicionado")
+    def cadastro_equipe (eq):
+        print(f"Equipe: {eq.nome_equipe}: adicionado")
 
 
-    def adicionar_jogador(self):
-        print(f"Jogador: {self.jogador} adicionado")
+    def adicionar_jogador(self,jogador):
+        self.jogadores.append(jogador)
+        print(f"Jogador: {jogador.nome_jogador} adicionado na equipe: {self.nome_equipe}")
 
 
-    def consultar_membros (self):
-        if(len(self.jogadores) >= 1):
-            print(f"Nome da equipe: {self.nome_equipe}")
-            for i in self.jogadores:
-                print(f"Jogador: {i.jogadores}")
-        else:
-            print("Nenhuma equipe cadastrada")
-
+    def listar_equipes (self):
+              print(f"Equipe: {self.nome_equipe}  Jogo: {self.jogo}  Nº Jogadores: {len(self.jogadores)} ")
     def consultar_equipes(self):
-                print(f"Nome: {self.nome_equipe} ")
-        
+        if len(self.jogadores) == 0:
+            print("Nenhum jogador na equipe.")
+        else:
+            for j in self.jogadores:
+                print(f"Nome: {j.nome_jogador}")
+                print(f"Nick: {j.nick}")
+                print(f"Apelido: {j.apelido}")
 
-    
     
 
