@@ -2,7 +2,7 @@ from classes import Jogador
 from classes import Equipe
 
 equipes = []
-jogadores = []
+jogadores= []
 
 while True:
     print("\n=== MENU ===")
@@ -33,6 +33,11 @@ while True:
         equipe.cadastro_equipe()
 
     elif opcao == 3:
+        for cont in range (len(equipes)):
+            print(f"Nome: {cont.nome_equipe}" )
+            
+
+
         equi = input("Digite o nome da equipe")
         for eq in equipes:
             if(equi == eq.nome_equipe):

@@ -27,7 +27,7 @@ class Equipe:
 
 
     def adicionar_jogador(self):
-        print(f"Jogador: {self.jogador} adicionado")
+        print(f"Jogador: {self.jogadores} adicionado")
 
 
     def consultar_membros (self):
