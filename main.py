@@ -58,17 +58,9 @@ while True:
         
 
     elif opcao == 6:
-        busca = input("Digite o nick do jogador")
-        if(len(jogadores) == 0):
-            print("Nenhum jogador cadastrado")
-            for k in jogadores:
-                if(busca == k.nick ):
-                    k.procurar_nick()
-
-    #             else:
-    #                 print("Jogador não encontrado")
-    # elif opcao == 0:
-    #     print("Saindo....")
+        pass
+    elif opcao == 0:
+        print("Saindo....")
 
     else:
         print("Digite um numero de 1 a 6")

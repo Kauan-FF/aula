@@ -4,8 +4,8 @@ class Jogador:
         self.nick = ""
         self.apelido = ""
 
-    def cadastro_jogadores (jg):
-        print(f"Jogador {jg.nome_jogador}: adicionado")
+    def cadastro_jogadores (self):
+        print(f"Jogador {self.nome_jogador}: adicionado")
 
 
     def procurar_nick (self):
@@ -18,8 +18,8 @@ class Equipe:
         self.jogadores = [] 
 
 
-    def cadastro_equipe (eq):
-        print(f"Equipe: {eq.nome_equipe}: adicionado")
+    def cadastro_equipe (self):
+        print(f"Equipe: {self.nome_equipe} adicionado")
 
 
     def adicionar_jogador(self,jogador):
