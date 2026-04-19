@@ -7,10 +7,10 @@ try:
     while True:
         print("MENU")
         print("1 - Cadastrar Jogadores")
-        print("2 - Consultar jogadores")
-        print("3 - Cadastrar equipe")
-        print("4 - Consultar nomes das equipe")
-        print("5 - Consultar jogadores da equipe")
+        print("2 - Cadastrar equipe")
+        print("3 - Adicionar jogador a uma equipe")
+        print("4 - Listar todas as equipes")
+        print("5 - Listar jogadores de uma equipe")
         print("6 - Buscar jogador por nickname")
         print("0 - Sair")
 
@@ -48,7 +48,8 @@ try:
                 print("Equipe já se encontra Cadastrada")
 
         elif opcao == 3:
-            vf = True
+            vf = False
+            vf2 = False
             print("Lista de Jogadores Disponiveis")
             for a in lista_j:
                 print(f"Jogadores: {a.nome_jogador} disponiveis ")
@@ -59,16 +60,22 @@ try:
             jogadores = input("Digite o nome do Jogador")
             for c in lista_j:
                 if(jogadores == c.nome_jogador):
-                    nome_equipe = input("Digite o nome da equipe")
+                    guardar = c
                     vf = True
+                    break
+            if vf:
+                nome_equipe = input("Digite o nome da equipe")
                 for d in lista_e:
                     if(nome_equipe == d.nome_equipe):
-                        d.adicionar_jogador(c)
+                        d.adicionar_jogador(guardar)
                         vf2 = True
-            if not vf:
-                print("Nome não encontrado")
-            if not vf2:
-                print("Equipe não encontrada")
+                        break
+                if not vf2:
+                    print("Equipe não encontrada") 
+
+            else:
+                print("Jogador não encontrado")
+            
         elif opcao == 4:
             for e in lista_e:
                 e.listar_equipes()
