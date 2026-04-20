@@ -1,3 +1,4 @@
+# classe jogador
 class Jogador:
     def __init__ (self):
         self.nome_jogador = ""
@@ -29,6 +30,7 @@ class Equipe:
 
     def listar_equipes (self):
               print(f"Equipe: {self.nome_equipe}  Jogo: {self.jogo}  Nº Jogadores: {len(self.jogadores)} ")
+
     def consultar_equipes(self):
         if len(self.jogadores) == 0:
             print("Nenhum jogador na equipe.")
