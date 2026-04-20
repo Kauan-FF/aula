@@ -8,8 +8,7 @@ class Jogador:
         print(f"Jogador {self.nome_jogador}: adicionado")
 
 
-    def procurar_nick (self,nick):
-        if(self.nick not in nick ):
+    def procurar_nick (self):
             print(f"Nick: {self.nome_jogador} / {self.nick} / {self.apelido}")
 
 class Equipe:

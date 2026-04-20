@@ -89,10 +89,15 @@ try:
             
 
         elif opcao == 6:
+            vf = False
             nick = input("Digite o Nick do jogador: ")
             for q in lista_j:
                 if nick == q.nick:
                     q.procurar_nick()
+                    vf = True
+                    break
+            if not vf:
+                print("Nick do jogador não encontrado")
 
         elif opcao == 0:
             print("Saindo....")
