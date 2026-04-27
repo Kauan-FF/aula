@@ -25,7 +25,7 @@ while opcao != 0:
         opcao = int(input("Escolha uma opção: "))
 
         # Codigo Cadastrar jogador 
-        if opcao == 1:
+        if(opcao == 1):
             # vf usado pra dizer se jogador já cadastrado
             vf = False
             # criando o objeto jogador e seus atributos
@@ -37,7 +37,7 @@ while opcao != 0:
                     vf = True
             
             # caso o jogador não estiver cadastrado
-            if not vf:
+            if(not vf):
                 jg.nick = input("Digite o nick do jogador: ")
                 jg.apelido = input("Digite o apelido do jogador: ")
                 jg.cadastro_jogadores()
@@ -60,7 +60,7 @@ while opcao != 0:
                     vf = True
                     break
             # se equipe não cadastrada 
-            if not vf:
+            if(not vf):
                 eq.jogo = input("Digite o nome do jogo da equipe: ")
                 eq.cadastro_equipe()
                 lista_e.append(eq)
@@ -69,16 +69,16 @@ while opcao != 0:
                 print("Equipe já se encontra Cadastrada")
 
         # add jogador a uma equipe
-        elif opcao == 3:
+        elif(opcao == 3):
             # vf se jogador 
             vf = False
             vf2 = False
             print("Lista de Jogadores Disponiveis")
             for a in lista_j:
-                print(f"Jogadores: {a.nome_jogador} disponiveis ")
+                print(f"Jogadores: {a.nome_jogador} disponivel ")
             print("Lista de Equipes Disponiveis")
             for b in lista_e:
-                print(f"Equipes: {b.nome_equipe} disponiveis ")
+                print(f"Equipes: {b.nome_equipe} disponivel ")
             
             jogadores = input("Digite o nome do Jogador: ")
             for c in lista_j:
@@ -92,20 +92,22 @@ while opcao != 0:
                             break
                     break
 
-            if not vf:
+            if(not vf):
                 print("Jogador não encontrado")
-            elif not vf2:
+            elif(not vf2):
                     print("Equipe não encontrada") 
                  
         # Codigo pra listar as equipes
-        elif opcao == 4:
+        elif(opcao == 4):
             # Laco for pra percorrer os nomes da equipe e executar o def
-            for e in lista_e:
-                e.listar_equipes()
+            if not lista_e:
+                    print("Nenhuma equipe cadastrada")
+            else:
+                for e in lista_e:
+                    e.listar_equipes()
 
         # Codigo para olhar os ingrantes da equipe
-        elif opcao == 5:
-
+        elif(opcao == 5):
             # vf usado para verificar se a equipe está na lista
             vf = False
             nome = input("Digite o nome da equipe: ")
@@ -117,28 +119,28 @@ while opcao != 0:
                     vf = True
                     break
             # caso a equipe não for encontrada
-            if not vf:
+            if(not vf):
                 print("Equipe não encontrada") 
 
         # Codigo do nick
-        elif opcao == 6:
+        elif(opcao == 6):
             # vf usado para verificar se o jogador está na lista
             vf = False
             nick = input("Digite o Nick do jogador: ")
             # percorre a lista dos jogadores
             for q in lista_j:
                 # se o nick estiver na lista roda o def e para a repetição
-                if nick == q.nick:
+                if(nick == q.nick):
                     q.procurar_nick()
                     vf = True
                     break
             # se não escontrar jogador 
             # not inverte false = true / true = false
-            if not vf:
+            if(not vf):
                 print("Nick do jogador não encontrado")
 
         # sai do loop
-        elif opcao == 0:
+        elif(opcao == 0):
             print("Saindo....")
 
         # caso o usuario digitar um numero que não está no menu

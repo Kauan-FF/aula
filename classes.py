@@ -32,7 +32,7 @@ class Equipe:
               print(f"Equipe: {self.nome_equipe}  Jogo: {self.jogo}  Nº Jogadores: {len(self.jogadores)} ")
 
     def consultar_equipes(self):
-        if len(self.jogadores) == 0:
+        if (len(self.jogadores) == 0):
             print("Nenhum jogador na equipe.")
         else:
             for j in self.jogadores:
