@@ -48,7 +48,7 @@ while opcao != 0:
                 print("Jogador já se encontra cadastrado")
         
         # Codigo cadastrar Equipe 
-        elif opcao == 2:
+        elif(opcao == 2):
             # vf usado para verificar se a equipe ja está cadastrada
             vf = False
             # criando o objeto equipe e seus atributos
@@ -100,7 +100,7 @@ while opcao != 0:
         # Codigo pra listar as equipes
         elif(opcao == 4):
             # Laco for pra percorrer os nomes da equipe e executar o def
-            if not lista_e:
+            if(not lista_e):
                     print("Nenhuma equipe cadastrada")
             else:
                 for e in lista_e:
