@@ -10,7 +10,7 @@ class Jogador:
 
 
     def procurar_nick (self):
-            print(f"Nick: {self.nome_jogador} / {self.nick} / {self.apelido}")
+            print(f"Nome do Jogador: {self.nome_jogador} / Nick: {self.nick} / Apelido: {self.apelido}")
 
 class Equipe:
     def __init__ (self):
@@ -36,9 +36,8 @@ class Equipe:
             print("Nenhum jogador na equipe.")
         else:
             for j in self.jogadores:
-                print(f"Nome: {j.nome_jogador}")
-                print(f"Nick: {j.nick}")
-                print(f"Apelido: {j.apelido}")
+                print(f"Nome: {j.nome_jogador} / Nick: {j.nick} / Apelido: {j.apelido}")
+
 
     
 

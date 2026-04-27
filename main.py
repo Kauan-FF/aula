@@ -8,9 +8,10 @@ lista_j = []
 lista_e = []
 opcao = 1
 # tratamento de erros
-try:
+
     # Codigo sai do loop ao usuario digitar 0
-    while opcao != 0:
+while opcao != 0:
+    try:
         print("MENU")
         print("1 - Cadastrar Jogadores")
         print("2 - Cadastrar equipe")
@@ -82,23 +83,20 @@ try:
             jogadores = input("Digite o nome do Jogador: ")
             for c in lista_j:
                 if(jogadores == c.nome_jogador):
-                    # guarda o objeto do jogador
-                    guardar = c
+                    nome_equipe = input("Digite o nome da equipe: ")
                     vf = True
+                    for d in lista_e:
+                        if(nome_equipe == d.nome_equipe):
+                            d.adicionar_jogador(c)
+                            vf2 = True
+                            break
                     break
-            if vf:
-                nome_equipe = input("Digite o nome da equipe: ")
-                for d in lista_e:
-                    if(nome_equipe == d.nome_equipe):
-                        d.adicionar_jogador(guardar)
-                        vf2 = True
-                        break
-                if not vf2:
-                    print("Equipe não encontrada") 
-            
-            else:
+
+            if not vf:
                 print("Jogador não encontrado")
-            
+            elif not vf2:
+                    print("Equipe não encontrada") 
+                 
         # Codigo pra listar as equipes
         elif opcao == 4:
             # Laco for pra percorrer os nomes da equipe e executar o def
@@ -107,6 +105,7 @@ try:
 
         # Codigo para olhar os ingrantes da equipe
         elif opcao == 5:
+
             # vf usado para verificar se a equipe está na lista
             vf = False
             nome = input("Digite o nome da equipe: ")
@@ -147,5 +146,5 @@ try:
             print("Digite um numero de 1 a 6")
 
 # mostra o que deu erro e printa pro usuario
-except Exception as erro:
-    print(f"Deu erro {erro}")
+    except Exception as erro:
+        print(f"Deu erro {erro}")
